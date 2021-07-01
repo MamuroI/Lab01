@@ -26,7 +26,13 @@
                     <p v-else>Out of Stock</p>
                     <p v-if="onSale">This product is on sale</p>
                     <p v-else>This product is not on sale</p>
+                    <ul>
+                        <li v-for="detail in details">{{ detail }}</li>
+                    </ul>
+                    <div v-for="variant in variants" :key="variant.id">{{ variant.color }}</div>
+                    <span v-for="size in sizes">{{ size }}</span>
                 </div>
+                
             </div>
         </div>
     </div>
