@@ -29,13 +29,18 @@ const app = Vue.createApp({
     },
     methods: {
         addToCart(){
-            this.cart += 1
+            if(this.cart<this.inventory){
+                this.cart += 1
+            }else{
+                this.cart = this.inventory
+            }
+            
         },
         updateImage(variantImage){
             this.image = variantImage
         },
         changeStatus(){
-            this.inStock = !this.inStock
+            
         }
     }
 })
